@@ -30,12 +30,8 @@ node.set['wordpress']['db']['password'] = "wppass"
 node.set['fqdn'] = "localhost"
 node.set['wordpress']['server_aliases'] = ["localhost"]
 
-case node["platform"]
-when "debian", "ubuntu"
-when "redhat", "centos", "fedora"
-  package "make"
-  package "gcc"
-end
+package "make"
+package "gcc"
 
 include_recipe "wordpress::default"
 
