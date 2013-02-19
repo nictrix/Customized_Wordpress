@@ -17,6 +17,7 @@
 
 execute "update mysql root password" do
   command "/usr/bin/mysqladmin -u root -p'$$MNroot' password 'run'"
+  only_if "test -f /usr/bin/mysqladmin"
 end
 
 node.set['mysql']['server_root_password'] = 'run'

@@ -8,7 +8,7 @@ version          "0.0.1"
 
 recipe "Customized_Wordpress::default", "Installs and configures WordPress with default attributes"
 
-depends "wordpress" "= 1.0.0"
+depends "wordpress", "= 1.0.0"
 
 %w{ centos ubuntu }.each do |os|
   supports os
